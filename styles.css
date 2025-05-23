@@ -18,6 +18,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    background-color: #e0f7fa; /* Global background color */
 }
 
 /* Navigation */
@@ -59,31 +60,33 @@ body {
 
 /* Hero Section */
 .hero {
+    /* background: url('images/hero-background.jpg') no-repeat center center/cover; */ /* Ensure image is not used */
+    background-color: #1dc9df; /* Explicit light cyan background */
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    background: url('images/hero-background.jpg') no-repeat center center/cover;
-    color: var(--white);
+    /* color: var(--white); */ /* Remove or change for hero-content */
     padding: 0 2rem;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
+/* .hero-overlay { */ /* Removing overlay as it's for image background */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* z-index: 1; */
+/* } */
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Keep content above any potential (though now removed) overlay plane */
     max-width: 800px;
+    color: var(--white); /* Changed back to white for dark hero background */
 }
 
 .hero-content h1 {
@@ -96,7 +99,7 @@ body {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
-    color: var(--light-bg);
+    color: var(--light-bg); /* Using a light variable, e.g., #f3f4f6 */
 }
 
 .hero-content p {
@@ -127,7 +130,7 @@ body {
     margin-top: 2rem;
     margin-bottom: 1rem;
     text-align: center;
-    color: var(--white);
+    color: var(--white); /* Changed back to white */
     font-size: 2rem;
     z-index: 2;
     animation: bounce-new 2s infinite;
@@ -139,7 +142,7 @@ body {
 
 .scroll-down-arrow:hover i {
     transform: translateY(5px);
-    color: var(--primary-color);
+    color: var(--primary-color); /* Hover color for arrow - primary might still work */
 }
 
 @keyframes bounce-new {
@@ -199,98 +202,71 @@ section h2 {
 
 /* About Section */
 .about {
-    background-color: var(--white);
-    position: relative;
-}
-
-.about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-color: inherit; /* Inherits from body */
+    padding: 5rem 2rem;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(37,99,235,0.03) 100%);
-    z-index: 0;
+    /* min-height: 100vh; */ /* Removed as body now has the full bg */
+    /* display: flex; */ /* Removed flex centering for the section itself */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
-.about-content {
-    max-width: 850px;
-    margin: 0 auto;
+.about-container {
+    max-width: 900px;
+    margin: 0 auto; /* Re-center container with auto margins */
+    width: 100%;
+}
+
+.about-card {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     text-align: left;
-    position: relative;
-    z-index: 1;
-    padding: 3rem;
-    background-color: rgba(255, 255, 255, 0.97);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-.about-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-}
-
-.about-intro {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
-}
-
-.about-details {
-    font-size: 1.15rem;
+.about-card p {
+    font-size: 1.1rem;
     line-height: 1.7;
-    color: var(--text-color);
-    padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(37,99,235,0.1);
+    color: #333333;
+    margin-bottom: 1.5rem;
 }
 
-.about-details strong {
-    color: var(--primary-color);
-    font-weight: 600;
+.about-card p:last-child {
+    margin-bottom: 0;
 }
 
-.about-passion {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--text-color);
-    font-style: italic;
-    padding: 0.5rem 0;
-}
-
-.about-goal {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--text-color);
+.about-summary {
     font-weight: 500;
-    margin-top: 0.5rem;
-    padding-top: 0.8rem;
-    border-top: 1px solid rgba(37,99,235,0.1);
+    font-size: 1.15rem;
+}
+
+.about-opportunities {
+    font-style: italic;
+    color: var(--primary-color);
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
-    .about-content {
+    .about {
+        padding: 3rem 1rem;
+        /* min-height: auto; */ /* Removed */
+    }
+    .about-card {
         padding: 2rem;
-        margin: 0 1rem;
     }
-    
-    .about-intro {
-        font-size: 1.4rem;
+    .about-card p {
+        font-size: 1rem;
     }
-    
-    .about-details,
-    .about-passion,
-    .about-goal {
+     .about-summary {
         font-size: 1.1rem;
     }
 }
 
 /* Skills Section */
 .skills {
-    background-color: var(--light-bg);
+    background-color: inherit; /* Inherits from body */
 }
 
 .skills-grid {
@@ -368,7 +344,7 @@ section h2 {
 
 /* Projects Section */
 .projects {
-    background-color: var(--white);
+    background-color: inherit; /* Inherits from body */
     padding: 5rem 2rem;
 }
 
@@ -490,7 +466,8 @@ section h2 {
 
 /* Contact Section */
 .contact {
-    background-color: var(--light-bg);
+    background-color: #e0f7fa; /* Explicit light cyan background */
+    padding: 5rem 2rem; /* Ensure padding is present */
 }
 
 .contact-content {
@@ -551,10 +528,12 @@ section h2 {
 
 /* Footer */
 footer {
-    background-color: var(--text-color);
-    color: var(--white);
+    background-color: inherit; /* Inherits from body */
+    /* color: var(--white); */ /* Re-evaluate footer text color if bg is light */
+    color: #333333; /* Example: Darker text for light inherited bg */
     text-align: center;
     padding: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.1); /* Optional: add a top border for separation */
 }
 
 /* Responsive Design */
@@ -587,7 +566,7 @@ html {
 
 /* Work Experience Section */
 .experience {
-    background-color: var(--light-bg);
+    background-color: inherit; /* Inherits from body */
     padding: 5rem 2rem;
 }
 
@@ -689,5 +668,55 @@ html {
     
     .experience-title h4 {
         font-size: 1rem;
+    }
+}
+
+.scroll-down-arrow-about {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+    animation: bounce-new 2s infinite;
+}
+
+.scroll-down-arrow-about i {
+    transition: var(--transition);
+}
+
+.scroll-down-arrow-about:hover i {
+    transform: translateY(5px);
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .scroll-down-arrow-about {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+}
+
+.scroll-down-arrow-section {
+    display: block;
+    text-align: center;
+    margin: 3rem auto 0; /* Increased top margin for space from content, centered */
+    font-size: 2rem;
+    color: var(--text-color); /* Using text color for visibility on light backgrounds */
+    animation: bounce-new 2s infinite; /* Reusing existing bounce animation */
+}
+
+.scroll-down-arrow-section i {
+    transition: var(--transition);
+}
+
+.scroll-down-arrow-section:hover i {
+    transform: translateY(5px);
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .scroll-down-arrow-section {
+        font-size: 1.5rem;
+        margin-top: 2rem;
     }
 } 
