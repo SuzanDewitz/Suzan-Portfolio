@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a passionate professional ready to showcase my work</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="about-intro">Hello! I'm Suzan Dewitz, a Full Stack Software Developer with a strong foundation in IT infrastructure, network engineering, and software support.</p>
+                <p class="about-details">I bring a unique blend of hands-on experience in network systems—such as Cisco and SAP security—and full stack development skills using JavaScript, Python, Django, and PostgreSQL.</p>
+                <p class="about-passion">I've completed certified training in Full Stack Development and Data Science, and I'm passionate about building functional, secure, and user-focused applications.</p>
+                <p class="about-goal">I'm currently looking for a position where I can contribute to a dynamic team and continue to grow as a developer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="experience">
+        <h2>Work Experience</h2>
+        <div class="experience-container">
+            <!-- Network Engineer Position -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>Network Engineer</h3>
+                        <h4>Schweickert Netzwerktechnik GmbH</h4>
+                    </div>
+                    <div class="experience-period">2016 – 2022</div>
+                </div>
+                <ul class="experience-details">
+                    <li><i class="fas fa-network-wired"></i> Managed Cisco-based networks and SAP remote access connections</li>
+                    <li><i class="fas fa-shield-alt"></i> Provided 1st-level VPN/SNC security support</li>
+                    <li><i class="fas fa-server"></i> Oversaw cabling, data center operations, and network documentation</li>
+                </ul>
+            </div>
+
+            <!-- SAP Infrastructure Specialist Position -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>Rechenzentrum Infrastructure Specialist</h3>
+                        <h4>SAP Support Center EMEA</h4>
+                    </div>
+                </div>
+                <ul class="experience-details">
+                    <li><i class="fas fa-tasks"></i> Handled infrastructure tasks and support for secure SAP connections</li>
+                    <li><i class="fas fa-chart-line"></i> Experience with PSE-Connections and network monitoring systems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <!-- Frontend Skills -->
+            <div class="skill-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Frontend</h3>
+                <ul class="skill-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                </ul>
+            </div>
+            
+            <!-- Backend Skills -->
+            <div class="skill-card">
+                <i class="fas fa-server"></i>
+                <h3>Backend</h3>
+                <ul class="skill-list">
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>Node.js</li>
+                </ul>
+            </div>
+            
+            <!-- Tools & Technologies -->
+            <div class="skill-card">
+                <i class="fas fa-tools"></i>
+                <h3>Tools & Technologies</h3>
+                <ul class="skill-list">
+                    <li>Git & GitHub</li>
+                    <li>PostgreSQL</li>
+                    <li>Heroku</li>
+                    <li>Docker</li>
+                    <li>VS Code</li>
+                    <li>ESLint</li>
+                    <li>Prettier</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <!-- E-Commerce Project -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="project-content">
+                    <h3>E-Commerce Website</h3>
+                    <p class="project-description">A full-featured e-commerce platform with secure user authentication, shopping cart functionality, and Stripe payment integration.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Project -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Portfolio Website</h3>
+                    <p class="project-description">A modern, responsive portfolio website showcasing my work, skills, and professional journey with smooth animations and clean design.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Dashboard Project -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Data Dashboard</h3>
+                    <p class="project-description">An interactive data visualization dashboard with dynamic charts, filters, and real-time data processing capabilities.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-content">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
