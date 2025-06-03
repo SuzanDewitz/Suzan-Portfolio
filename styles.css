@@ -17,7 +17,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--white); /* Default text color to white for dark body */
+    background-color: var(--text-color); /* Global dark background from footer */
 }
 
 /* Navigation */
@@ -59,25 +60,195 @@ body {
 
 /* Hero Section */
 .hero {
+    /* background-color: #1dc9df; */ /* Reverting this */
+    background-color: inherit; /* Inherit body's dark background */
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    background: linear-gradient(rgba(37,99,235,0.1), rgba(37,99,235,0.05));
-    padding: 0 1rem;
+    /* text-align: center; */ /* Text alignment will be handled by .hero-text */
+    position: relative;
+    padding: 0 2rem;
+    /* color: var(--text-color); */ /* Ensure hero text is styled within .hero-text */
 }
 
-.hero-content h1 {
-    font-size: 3rem;
+.hero-content-wrapper {
+    display: flex;
+    align-items: center; /* Vertically align text and image */
+    justify-content: space-between; /* Distribute space, or use gap */
+    gap: 3rem; /* Space between text and image columns */
+    width: 100%;
+    max-width: 1100px; /* Max width for the two-column layout */
+    margin: 0 auto; /* Center the wrapper if hero is wider */
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+    color: var(--white); /* Light text for dark hero background */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    font-weight: 700;
+    /* color: var(--text-color); Ensure this is applied */
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #4b5563;
+.hero-text h1 .highlighted-name { /* Style for the highlighted name */
+    color: var(--primary-color); /* Or another standout color */
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: var(--light-bg); /* Use a light variable, e.g., #f3f4f6 */
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.hero-btn { /* Styles for the new hero button */
+    display: inline-block;
+    padding: 0.8rem 1.8rem; /* Adjusted padding */
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px; /* More rounded corners */
+    font-size: 1.1rem; /* Adjusted font size */
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none; /* Remove default border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Subtle shadow */
+}
+
+.hero-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.hero-text .scroll-down-arrow {
+    /* This class might no longer be used if arrow moved out, or could be a general style */
+    /* Keep if other arrows might be in .hero-text, otherwise this specific rule can be removed if only one arrow */
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--white); /* Light arrow for dark hero background */
+    font-size: 2rem;
+    animation: bounce-new 2s infinite;
+}
+
+.hero-scroll-arrow-main { /* New class for the main hero arrow */
+    position: absolute;
+    bottom: 3rem; /* Adjust distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 2rem; /* Or 1.5rem for mobile if needed */
+    z-index: 10; /* Ensure it's above other hero content if any overlap */
+    animation: bounce-new 2s infinite;
+}
+
+.hero-scroll-arrow-main i { /* Added transition here for smooth animation */
+    display: inline-block; /* Ensure transform applies correctly */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hero-scroll-arrow-main:hover i {
+    /* transform: translateY(5px) translateX(-50%); */ /* Initial translateX needs to be maintained if parent is transformed */
+    /* Or simply if only the i element moves: transform: translateY(5px); */
+    transform: translateY(5px); /* Animate downward */
+    color: var(--primary-color);
+}
+
+/* Adjust media query for .hero-scroll-arrow-main if needed */
+@media (max-width: 768px) {
+    .hero-scroll-arrow-main {
+        font-size: 1.5rem;
+        bottom: 2rem;
+    }
+    /* ... other responsive styles ... */
+}
+
+.hero-image-wrapper {
+    flex: 1; /* Adjust flex-basis or use percentages */
+    display: flex;
+    justify-content: center; /* Center image within its column */
+    align-items: center;
+}
+
+.hero-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Crop image to fit, maintain aspect ratio */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Shadow might be less visible on dark bg */
+    border: 5px solid #4a5a6a; /* Example: Slightly lighter border than bg for definition */
+}
+
+/* Remove styles from old .hero-content if they conflict or are redundant */
+/* .hero-content { ... } */
+
+.wave {
+    display: inline-block;
+    animation: wave-animation 2.5s infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0.0deg) }
+    10% { transform: rotate(14.0deg) }
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate(0.0deg) }
+    100% { transform: rotate(0.0deg) }
+}
+
+@media (max-width: 768px) {
+    .hero-content-wrapper {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center text content when stacked */
+        gap: 2rem;
+    }
+
+    .hero-text {
+        text-align: center; /* Center text within its block */
+        order: 2; /* Image first, then text */
+    }
+
+    .hero-text .scroll-down-arrow {
+        text-align: center; /* Center arrow when stacked */
+    }
+
+    .hero-image-wrapper {
+        order: 1; /* Image appears on top */
+        margin-bottom: 1rem; /* Space below image when stacked */
+    }
+
+    .hero-image {
+        width: 250px; /* Slightly smaller for mobile */
+        height: 250px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+    .hero-text p {
+        font-size: 1.1rem;
+    }
 }
 
 .cta-button {
@@ -104,103 +275,90 @@ section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-color);
+    color: var(--white); /* Light color for section titles on dark bg */
 }
 
 /* About Section */
 .about {
-    background-color: var(--white);
-    position: relative;
-}
-
-.about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-color: inherit; /* Will inherit dark body background */
+    padding: 5rem 2rem;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(37,99,235,0.03) 100%);
-    z-index: 0;
+    /* min-height: 100vh; */ /* Removed as body now has the full bg */
+    /* display: flex; */ /* Removed flex centering for the section itself */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
-.about-content {
-    max-width: 850px;
-    margin: 0 auto;
+.about-container {
+    max-width: 900px; /* Reverted to original max-width for single card */
+    margin: 0 auto; /* Center the container */
+    width: 100%;
+    /* display: flex; */ /* Remove flex as it's no longer two-column */
+    /* align-items: center; */
+    /* gap: 3rem; */
+}
+
+.about-card { /* Renamed back from .about-text-content */
+    /* flex: 2; */ /* Remove flex property */
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     text-align: left;
-    position: relative;
-    z-index: 1;
-    padding: 3rem;
-    background-color: rgba(255, 255, 255, 0.97);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-.about-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-}
-
-.about-intro {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
-}
-
-.about-details {
-    font-size: 1.15rem;
+.about-card p { /* Ensure this targets paragraphs in .about-card */
+    font-size: 1.1rem;
     line-height: 1.7;
-    color: var(--text-color);
-    padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(37,99,235,0.1);
+    color: #333333; /* Dark text on white card */
+    margin-bottom: 1.5rem;
 }
 
-.about-details strong {
-    color: var(--primary-color);
-    font-weight: 600;
+.about-card p:last-child {
+    margin-bottom: 0;
 }
 
-.about-passion {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--text-color);
-    font-style: italic;
-    padding: 0.5rem 0;
-}
+/* Remove .about-image-container and .profile-picture styles */
+/* .about-image-container { ... } */
+/* .profile-picture { ... } */
 
-.about-goal {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--text-color);
+.about-summary {
     font-weight: 500;
-    margin-top: 0.5rem;
-    padding-top: 0.8rem;
-    border-top: 1px solid rgba(37,99,235,0.1);
+    font-size: 1.15rem;
+}
+
+.about-opportunities {
+    font-style: italic;
+    color: var(--primary-color);
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
-    .about-content {
+    .about {
+        padding: 3rem 1rem;
+    }
+    .about-container {
+        /* flex-direction: column; */ /* Remove */
+        /* gap: 2rem; */ /* Remove */
+    }
+    .about-card { /* Ensure card styles apply correctly on mobile */
+        /* flex: none; */ /* Remove */
+        /* width: 100%; */ /* Default block behavior will make it full width */
         padding: 2rem;
-        margin: 0 1rem;
     }
-    
-    .about-intro {
-        font-size: 1.4rem;
+    /* Remove .profile-picture mobile styles */
+    .about-card p { /* Ensure this targets paragraphs in .about-card for mobile */
+        font-size: 1rem;
     }
-    
-    .about-details,
-    .about-passion,
-    .about-goal {
+     .about-summary {
         font-size: 1.1rem;
     }
 }
 
 /* Skills Section */
 .skills {
-    background-color: var(--light-bg);
+    background-color: inherit; /* Will inherit dark body background */
 }
 
 .skills-grid {
@@ -222,6 +380,7 @@ section h2 {
 
 .skill-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .skill-card i {
@@ -230,7 +389,58 @@ section h2 {
     margin-bottom: 1rem;
 }
 
+.skill-card h3 {
+    color: var(--text-color); /* Dark text on white card */
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.skill-list li {
+    color: var(--text-color); /* Dark text on light-bg list items */
+    /* background-color: var(--light-bg); */ /* List item bg needs to be light if text is dark */
+    background-color: #f0f0f0; /* Ensuring list items are light for dark text */
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.skill-list li:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .skill-card {
+        padding: 1.5rem;
+    }
+    
+    .skill-list li {
+        font-size: 1rem;
+    }
+}
+
 /* Projects Section */
+.projects {
+    background-color: inherit; /* Will inherit dark body background */
+    padding: 5rem 2rem;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -241,47 +451,116 @@ section h2 {
 
 .project-card {
     background-color: var(--white);
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.project-image {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 3rem 2rem;
+    text-align: center;
 }
 
-.project-card h3 {
-    padding: 1rem;
+.project-image i {
+    font-size: 3.5rem;
+    color: var(--white);
+}
+
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-content h3 {
     font-size: 1.5rem;
+    color: var(--text-color); /* Dark text on white card */
+    margin: 0;
 }
 
-.project-card p {
-    padding: 0 1rem 1rem;
-    color: #4b5563;
+.project-description {
+    color: #4b5563; /* Dark text on white card */
+    line-height: 1.6;
+    margin: 0;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.tech-tag {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .project-links {
-    padding: 1rem;
+    margin-top: auto;
     display: flex;
     gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--light-bg);
 }
 
 .project-link {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    color: var(--secondary-color);
+}
+
+.project-link i {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .project-image {
+        padding: 2rem;
+    }
+    
+    .project-image i {
+        font-size: 3rem;
+    }
 }
 
 /* Contact Section */
 .contact {
-    background-color: var(--light-bg);
+    background-color: inherit; /* Will inherit dark body background */
+    padding: 5rem 2rem;
 }
 
 .contact-content {
@@ -342,10 +621,36 @@ section h2 {
 
 /* Footer */
 footer {
-    background-color: var(--text-color);
+    background-color: var(--text-color); /* This is the source color for body */
     color: var(--white);
     text-align: center;
     padding: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.social-networks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0; /* Margin below the icons, before copyright */
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Spacing between icons */
+}
+
+.social-networks li a {
+    color: var(--white); /* Light icon color for dark footer */
+    font-size: 1.8rem;
+    transition: var(--transition);
+}
+
+.social-networks li a:hover {
+    color: var(--primary-color); /* Keep primary color for hover, or use a light variant */
+    transform: translateY(-3px);
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    color: var(--light-bg); /* Lighter text for dark footer */
 }
 
 /* Responsive Design */
@@ -358,8 +663,39 @@ footer {
         display: none;
     }
 
-    .hero-content h1 {
-        font-size: 2rem;
+    .hero-content-wrapper {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center text content when stacked */
+        gap: 2rem;
+    }
+
+    .hero-text {
+        text-align: center; /* Center text within its block */
+        order: 2; /* Image first, then text */
+    }
+
+    .hero-text .scroll-down-arrow {
+        text-align: center; /* Center arrow when stacked */
+    }
+
+    .hero-image-wrapper {
+        order: 1; /* Image appears on top */
+        margin-bottom: 1rem; /* Space below image when stacked */
+    }
+
+    .hero-image {
+        width: 250px; /* Slightly smaller for mobile */
+        height: 250px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+    .hero-text p {
+        font-size: 1.1rem;
     }
 
     section {
@@ -374,4 +710,154 @@ footer {
 /* Add smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Work Experience Section */
+.experience {
+    background-color: inherit; /* Will inherit dark body background */
+    padding: 5rem 2rem;
+}
+
+.experience-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.experience-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--light-bg);
+}
+
+.experience-title h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-title h4 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.experience-period {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.experience-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.experience-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: var(--text-color); /* Text in cards, ensure dark */
+    line-height: 1.6;
+}
+
+.experience-details li i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .experience-container {
+        gap: 1.5rem;
+    }
+    
+    .experience-card {
+        padding: 1.5rem;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .experience-period {
+        align-self: flex-start;
+    }
+    
+    .experience-title h3 {
+        font-size: 1.3rem;
+    }
+    
+    .experience-title h4 {
+        font-size: 1rem;
+    }
+}
+
+.scroll-down-arrow-about {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: var(--white); /* Light arrow for dark inherited section backgrounds */
+    animation: bounce-new 2s infinite;
+}
+
+.scroll-down-arrow-about i {
+    transition: var(--transition);
+}
+
+.scroll-down-arrow-about:hover i {
+    transform: translateY(5px);
+    color: var(--primary-color); /* Hover color */
+}
+
+.scroll-down-arrow-section {
+    display: block;
+    text-align: center;
+    margin: 3rem auto 0; /* Increased top margin for space from content, centered */
+    font-size: 2rem;
+    color: var(--white); /* Light arrow for dark inherited section backgrounds */
+    animation: bounce-new 2s infinite; /* Reusing existing bounce animation */
+}
+
+.scroll-down-arrow-section i {
+    transition: var(--transition);
+}
+
+.scroll-down-arrow-section:hover i {
+    transform: translateY(5px);
+    color: var(--primary-color); /* Hover color */
+}
+
+@media (max-width: 768px) {
+    .scroll-down-arrow-section {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
 } 

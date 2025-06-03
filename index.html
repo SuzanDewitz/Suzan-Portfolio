@@ -14,6 +14,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -22,78 +23,384 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>I'm a passionate professional ready to showcase my work</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+    <div class="hero-content-wrapper">
+        <!-- Text on the left -->
+        <div class="hero-text">
+            <h1>Hi, I'm <span class="highlighted-name">Suzan Dewitz</span> <span class="wave">👋</span></h1>
+            <h2>Full Stack Developer & Network Engineer</h2>
+            <p>Passionate about building secure, user-focused applications.</p>
+            <a href="#projects" class="btn hero-btn">View My Projects</a>
         </div>
-    </section>
+
+        <!-- Image on the right -->
+        <div class="hero-image-wrapper">
+            <img src="images/Suzan.jpg" alt="Suzan Dewitz" class="hero-image" />
+        </div>
+    </div>
+
+    <a href="#about" class="scroll-down-arrow hero-scroll-arrow-main" aria-label="Scroll to About section">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p class="about-intro">Hello! I'm Suzan Dewitz, a Full Stack Software Developer with a strong foundation in IT infrastructure, network engineering, and software support.</p>
-                <p class="about-details">I bring a unique blend of hands-on experience in network systems—such as Cisco and SAP security—and full stack development skills using JavaScript, Python, Django, and PostgreSQL.</p>
-                <p class="about-passion">I've completed certified training in Full Stack Development and Data Science, and I'm passionate about building functional, secure, and user-focused applications.</p>
-                <p class="about-goal">I'm currently looking for a position where I can contribute to a dynamic team and continue to grow as a developer.</p>
+        <div class="about-container">
+            <div class="about-card">
+                <h3>Who I Am</h3>
+                <p>A dynamic Full Stack Developer with a strong foundation in IT and Network Engineering. I specialize in building responsive web applications using HTML5, CSS, JavaScript, React, Python, and Django.</p>
+                <h3>What I Do</h3>
+                <p>From intuitive frontends to robust backend systems, I manage full-stack projects, databases (PostgreSQL, MySQL), deployment (Heroku), and integrate AI and LLM tools to deliver intelligent solutions.</p>
+                <h3>What Drives Me</h3>
+                <p>My journey started with problem-solving in network infrastructures—cabling, routers, and support. Today, I combine that knowledge with SEO, software testing, and a passion for cutting-edge tech to build impactful digital products.</p>
             </div>
         </div>
+        <a href="#experience" class="scroll-down-arrow-about">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="experience">
+        <h2>Work Experience</h2>
+        <div class="experience-container">
+            <!-- Network Technician -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>Network Technician</h3>
+                        <h4>Schweickert Netzwerktechnik GmbH — Walldorf, St. Leon-Rot</h4>
+                    </div>
+                    <div class="experience-period">March 2021 – February 2022</div>
+                </div>
+                <ul class="experience-details">
+                    <li><i class="fas fa-network-wired"></i> Managed and optimized Cisco switch networks via CLI for efficient office network operations.</li>
+                    <li><i class="fas fa-drafting-compass"></i> Designed and implemented office cabling templates to improve infrastructure and network performance.</li>
+                    <li><i class="fas fa-wifi"></i> Specialized in troubleshooting network issues, including wireless access points and connectivity problems.</li>
+                    <li><i class="fas fa-shield-alt"></i> Ensured data security by integrating secure databases, managing switch resets, and securely wiping data from decommissioned switches.</li>
+                </ul>
+            </div>
+
+            <!-- Network Engineer – SAP Remote Connection Support -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>Network Engineer – SAP Remote Connection Support Centre EMEA</h3>
+                        <h4>SAP</h4> <!-- Assuming company is SAP based on title -->
+                    </div>
+                    <div class="experience-period">September 2019 – February 2020</div>
+                </div>
+                <ul class="experience-details">
+                    <li><i class="fas fa-user-shield"></i> Provided secure access to SAP clients through VPN and SNC technologies, focusing on enhanced data protection.</li>
+                    <li><i class="fas fa-key"></i> Configured SAP Secure Network Communications (SNC) and generated Personal Security Environments (PSE) to ensure secure data transmission.</li>
+                    <li><i class="fas fa-users"></i> Collaborated effectively with SAP teams to maintain seamless communication and support.</li>
+                </ul>
+            </div>
+
+            <!-- Data Center Infrastructure Specialist -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>Data Center Infrastructure Specialist</h3>
+                        <h4>SAP Support Center EMEA</h4> <!-- Kept original, or specify if different -->
+                    </div>
+                    <div class="experience-period">September 2016 – February 2018</div>
+                </div>
+                <ul class="experience-details">
+                    <li><i class="fas fa-server"></i> Managed Cisco, Arista, and HP switches in data center environments; deployed servers, managed cabling, racks, and power distribution units (PDUs).</li>
+                    <li><i class="fas fa-plug"></i> Installed and maintained fiber optic cables, power supply systems, and cooling infrastructure to ensure reliable operations.</li>
+                    <li><i class="fas fa-file-alt"></i> Prepared project reports and coordinated daily team activities.</li>
+                    <li><i class="fas fa-tools"></i> Conducted regular fiber optic cleaning and testing (OLTS, OTDR) to maintain optimal network performance.</li>
+                </ul>
+            </div>
+        </div>
+        <a href="#skills" class="scroll-down-arrow-section" aria-label="Scroll to Skills section">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <h2>Skills</h2>
+        <h2>Skills & Tools</h2>
         <div class="skills-grid">
-            <!-- Add your skills here -->
+            <!-- Programming Languages -->
             <div class="skill-card">
                 <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>HTML, CSS, JavaScript</p>
+                <h3>Programming Languages</h3>
+                <ul class="skill-list">
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                </ul>
             </div>
-            <!-- Add more skill cards as needed -->
+
+            <!-- Frontend Frameworks -->
+            <div class="skill-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Frontend Frameworks</h3>
+                <ul class="skill-list">
+                    <li>React</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+
+            <!-- Backend & Databases -->
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>Backend & Databases</h3>
+                <ul class="skill-list">
+                    <li>Django</li>
+                    <li>PostgreSQL</li>
+                    <li>ElephantSQL</li>
+                </ul>
+            </div>
+            
+            <!-- Version Control -->
+            <div class="skill-card">
+                <i class="fab fa-git-alt"></i>
+                <h3>Version Control</h3>
+                <ul class="skill-list">
+                    <li>Git</li>
+                    <li>GitHub</li>
+                </ul>
+            </div>
+
+            <!-- Dev Tools & Libraries -->
+            <div class="skill-card">
+                <i class="fas fa-tools"></i>
+                <h3>Dev Tools & Libraries</h3>
+                <ul class="skill-list">
+                    <li>ESLint</li>
+                    <li>Prettier</li>
+                    <li>Axios</li>
+                    <li>jwt-decode</li>
+                    <li>react-router-dom</li>
+                    <li>Cloudinary</li>
+                </ul>
+            </div>
+
+            <!-- Wireframing & Prototyping -->
+            <div class="skill-card">
+                <i class="fas fa-drafting-compass"></i>
+                <h3>Wireframing & Prototyping</h3>
+                <ul class="skill-list">
+                    <li>Balsamiq</li>
+                    <li>LucidCharts</li>
+                    <li>drawSQL</li>
+                </ul>
+            </div>
+
+            <!-- Deployment -->
+            <div class="skill-card">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Deployment</h3>
+                <ul class="skill-list">
+                    <li>Heroku</li>
+                    <li>Render</li>
+                </ul>
+            </div>
+
+            <!-- Networking -->
+            <div class="skill-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>Networking</h3>
+                <ul class="skill-list">
+                    <li>Cisco switch management</li>
+                    <li>VPN</li>
+                    <li>Secure Network Communications (SNC)</li>
+                    <li>PSE generation</li>
+                    <li>Troubleshooting wireless networks</li>
+                </ul>
+            </div>
+
+            <!-- Data Center Skills -->
+            <div class="skill-card">
+                <i class="fas fa-server"></i>
+                <h3>Data Center Skills</h3>
+                <ul class="skill-list">
+                    <li>Server deployment</li>
+                    <li>Cabling & Rack setup</li>
+                    <li>Fiber optics maintenance & testing (OLTS, OTDR)</li>
+                    <li>Power & Cooling management</li>
+                </ul>
+            </div>
+
+            <!-- Project Management -->
+            <div class="skill-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Project Management</h3>
+                <ul class="skill-list">
+                    <li>Agile methodologies (Scrum, Kanban)</li>
+                    <li>Documentation</li>
+                    <li>Report generation</li>
+                </ul>
+            </div>
+
+            <!-- Software -->
+            <div class="skill-card">
+                <i class="fas fa-cogs"></i> <!-- Generic software icon -->
+                <h3>Software</h3>
+                <ul class="skill-list">
+                    <li>Microsoft Office Suite</li>
+                    <li>ServiceNow</li>
+                    <li>IP Address Management (IPAM)</li>
+                </ul>
+            </div>
         </div>
+        <a href="#projects" class="scroll-down-arrow-section" aria-label="Scroll to Projects section">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="projects-grid">
-            <!-- Project cards will go here -->
+            <!-- Pitbull Breeder Website -->
             <div class="project-card">
-                <img src="images/project-placeholder.jpg" alt="Project 1">
-                <h3>Project Title</h3>
-                <p>Project description goes here.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">View Project</a>
-                    <a href="#" class="project-link">Source Code</a>
+                <div class="project-image">
+                    <i class="fas fa-dog"></i> <!-- Placeholder icon -->
+                </div>
+                <div class="project-content">
+                    <h3>Pitbull Breeder Website</h3>
+                    <p class="project-period">September 2022 – November 2022</p>
+                    <p class="project-description">Created a dynamic and visually appealing website using HTML and CSS. Implemented icon fonts and Google Fonts for enhanced design aesthetics. Focused on front-end development with a clean user interface.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer Quiz Game -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-gamepad"></i> <!-- Placeholder icon -->
+                </div>
+                <div class="project-content">
+                    <h3>Computer Quiz Game</h3>
+                    <p class="project-period">January 2023 – February 2023</p>
+                    <p class="project-description">Developed a multi-level interactive quiz game utilizing JavaScript, HTML, and CSS. Applied core web development skills to build engaging user experience.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Hangman Game -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-terminal"></i> <!-- Placeholder icon -->
+                </div>
+                <div class="project-content">
+                    <h3>Python Hangman Game</h3>
+                    <p class="project-period">March 2023 – April 2023</p>
+                    <p class="project-description">Built a text-based Hangman game using Python, running in the terminal. Demonstrated programming and creative problem-solving skills.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Stack Toolkit Restaurant Booking System -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-utensils"></i> <!-- Placeholder icon -->
+                </div>
+                <div class="project-content">
+                    <h3>Full Stack Toolkit Restaurant Booking System</h3>
+                    <p class="project-period">May 2023 – June 2023</p>
+                    <p class="project-description">Developed a full stack restaurant booking system integrating Python with Django and cloud storage (Cloudinary). Used Bootstrap for responsive frontend design. Managed project with GitPod and designed wireframes with Balsamiq; data schema created with LucidCharts.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Cloudinary</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-Commerce Auto Buy and Sell Platform -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-car"></i> <!-- Placeholder icon -->
+                </div>
+                <div class="project-content">
+                    <h3>E-Commerce Auto Buy and Sell Platform</h3>
+                    <p class="project-period">July 2023 – August 2023</p>
+                    <p class="project-description">Built a full stack platform for buying and selling cars with React frontend. Implemented user authentication (JWT), HTTP requests (Axios), routing (react-router-dom), and styling (React Bootstrap). Designed data schema with drawSQL and managed code quality with ESLint and Prettier. Collaborated via Git and GitHub for version control.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">Axios</span>
+                        <span class="tech-tag">React Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub Repository</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <a href="#contact" class="scroll-down-arrow-section" aria-label="Scroll to Contact section">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
         <div class="contact-content">
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
+            <form action="https://formspree.io/f/xvganlrn" method="POST" id="contact-form-spree" class="contact-form">
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit" class="submit-button">Send Message</button>
             </form>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        <ul class="social-networks">
+            <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)"><i class="fab fa-twitter-square"></i></a>
+            </li>
+            <li>
+                <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our YouTube page (opens in a new tab)"><i class="fab fa-youtube-square"></i></a>
+            </li>
+        </ul>
+        <p class="copyright-text">&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
 </body>
 </html> 
