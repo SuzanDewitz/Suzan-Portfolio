@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -14,6 +17,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -23,25 +27,26 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-    <div class="hero-content-wrapper">
-        <!-- Text on the left -->
-        <div class="hero-text">
-            <h1>Hi, I'm <span class="highlighted-name">Suzan Dewitz</span> <span class="wave">👋</span></h1>
-            <h2>Full Stack Developer & Network Engineer</h2>
-            <p>Passionate about building secure, user-focused applications.</p>
-            <a href="#projects" class="btn hero-btn">View My Projects</a>
+        <div id="particles-js" class="particles-background"></div>
+        <div class="hero-content-wrapper">
+            <!-- Text on the left -->
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlighted-name">Suzan</span> <span class="highlighted-lastname">Dewitz</span> <span class="wave">👋</span></h1>
+                <h2>Full Stack Developer & Network Engineer</h2>
+                <p>Passionate about building secure, user-focused applications.</p>
+                <a href="#contact" class="btn hero-btn">Contact</a>
+            </div>
+
+            <!-- Image on the right -->
+            <div class="hero-image-wrapper">
+                <img src="images/Suzan.jpg" alt="Suzan Dewitz" class="hero-image" />
+            </div>
         </div>
 
-        <!-- Image on the right -->
-        <div class="hero-image-wrapper">
-            <img src="images/Suzan.jpg" alt="Suzan Dewitz" class="hero-image" />
-        </div>
-    </div>
-
-    <a href="#about" class="scroll-down-arrow hero-scroll-arrow-main" aria-label="Scroll to About section">
-        <i class="fas fa-chevron-down"></i>
-    </a>
-</section>
+        <a href="#about" class="scroll-down-arrow hero-scroll-arrow-main" aria-label="Scroll to About section">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -57,6 +62,46 @@
             </div>
         </div>
         <a href="#experience" class="scroll-down-arrow-about">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <h2>Education</h2>
+        <div class="education-container section-container"> 
+            <!-- First Education Entry -->
+            <div class="education-item-card content-card"> 
+                <div class="education-header">
+                    <div class="education-title">
+                        <h3>IT – Training Courses</h3>
+                        <h4>Eskills Academy, Scarborough, Canada</h4>
+                    </div>
+                    <div class="education-period">09/2022 – 08/2023</div>
+                </div>
+                <ul class="education-details">
+                    <li><i class="fas fa-atom"></i>Data Science</li> 
+                    <li><i class="fas fa-brain"></i>Machine Learning</li>
+                </ul>
+            </div>
+
+            <!-- Second Education Entry -->
+            <div class="education-item-card content-card">
+                <div class="education-header">
+                    <div class="education-title">
+                        <h3>Online Diploma – Full Stack Software Development (Advanced Front End)</h3>
+                        <h4>Code Institute, Dublin, Ireland</h4>
+                    </div>
+                    <div class="education-period">03/2022 – 08/2022</div>
+                </div>
+                <ul class="education-details">
+                    <li><i class="fab fa-html5"></i>HTML/CSS, JavaScript, and Python</li> 
+                    <li><i class="fas fa-tools"></i>Network Full Stack Toolkit</li>
+                    <li><i class="fas fa-shopping-cart"></i>E-Commerce</li>
+                </ul>
+            </div>
+        </div>
+        <a href="#experience" class="scroll-down-arrow-section" aria-label="Scroll to Experience section">
             <i class="fas fa-chevron-down"></i>
         </a>
     </section>
@@ -402,5 +447,8 @@
         </ul>
         <p class="copyright-text">&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.34.1/tsparticles.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html> 
