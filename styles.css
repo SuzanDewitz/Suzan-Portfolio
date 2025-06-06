@@ -464,12 +464,12 @@ body {
 
 .project-image {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    padding: 1.5rem;
+    padding: 0.60rem;
     text-align: center;
 }
 
 .project-image i {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: var(--white);
 }
 
@@ -492,6 +492,7 @@ body {
     color: var(--content-text-color); 
     line-height: 1.6;
     margin: 0;
+    font-size: 0.85rem; 
 }
 
 .project-tech {
@@ -953,10 +954,6 @@ section#contact > h2::before { content: "✉️"; }
     gap: 2rem; /* Space between education cards */
 }
 
-/* .education-item-card uses general card styles defined in the group including .experience-card */
-/* The group selector is: .about-card, .skill-card, .project-card, .experience-card, .education-item-card */
-/* It handles: initial opacity, transform, border-radius, box-shadow, background-color, padding, base color, transition, border */
-
 .education-item-card:hover { /* Match experience card hover */
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.15);
@@ -971,9 +968,6 @@ section#contact > h2::before { content: "✉️"; }
     border-bottom: 2px solid var(--light-bg); /* Subtle separator, matches experience */
 }
 
-/* .education-title h3 (Course Title) uses general card title styles: */
-/* .about-card h3, ..., .education-title h3 { font-size: var(--card-title-size); font-weight: 600; margin-bottom: 1.25rem; color: var(--heading-text-color); } */
-/* Specific color override to match experience job title: */
 .education-title h3 {
     color: var(--primary-color); /* Blue for course titles */
     /* font-size, weight, margin-bottom are inherited from the general rule */
@@ -985,7 +979,6 @@ section#contact > h2::before { content: "✉️"; }
     font-weight: 500;
     margin-top: 0.25rem; /* Small space below course title */
 }
-
 .education-period { /* Date Pill - Matches experience-period */
     background-color: rgba(255, 255, 255, 0.1); 
     color: var(--content-text-color);
@@ -995,7 +988,6 @@ section#contact > h2::before { content: "✉️"; }
     font-weight: 500;
     white-space: nowrap; /* Prevent breaking on mobile if possible */
 }
-
 .education-details { /* UL for bullet points - Matches experience-details */
     list-style: none;
     padding: 0;
@@ -1004,34 +996,23 @@ section#contact > h2::before { content: "✉️"; }
     flex-direction: column;
     gap: 1rem; 
 }
-
-/* .education-details li (Bullet points) uses general card paragraph/list item styles: */
-/* .about-card p, ..., .education-details li, ... { margin-bottom: 1.25rem; line-height: var(--base-line-height); font-size: var(--base-font-size); color: var(--content-text-color); } */
 .education-details li {
     display: flex; /* For icon alignment */
     align-items: flex-start;
     gap: 1rem; /* Space between icon and text */
     /* Typography (size, color, line-height) inherited from general rule */
 }
-
 .education-details li:last-child {
     margin-bottom: 0; /* Consistent with other cards */
 }
-
 .education-details li i { /* Font Awesome Icons - Matches experience icon style */
     color: var(--primary-color);
     font-size: 1.2rem; 
     margin-top: 0.2rem; /* Align with text slightly better */
     flex-shrink: 0; /* Prevent icon from shrinking */
 }
-
 /* Responsive Design Adjustments for Education (already mostly in place) */
 @media (max-width: 768px) {
-    /* section#education > h2::before already has mobile styles */
-    /* .education-item-card padding already covered by general card mobile rule */
-    /* .education-title h3 font-size already covered by general card title mobile rule */
-    /* .education-details li font-size already covered by general card list item mobile rule */
-
     .education-container {
         gap: 1.5rem; /* Matches experience */
     }
