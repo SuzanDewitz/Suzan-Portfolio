@@ -1017,6 +1017,8 @@ section#contact > h2::before { content: "✉️"; }
     
     .experience-period {
         align-self: flex-start;
+        white-space: normal; /* Allow text to wrap so it doesn't get cut off */
+        text-align: center; /* Center the text for a cleaner look when wrapped */
     }
     
     .experience-title h3 {
@@ -1039,6 +1041,8 @@ section#contact > h2::before { content: "✉️"; }
         align-self: flex-start;
         font-size: 0.85rem; 
         padding: 0.4rem 0.8rem;
+        white-space: normal; /* Allow text to wrap */
+        text-align: center; /* Center the text for a cleaner look */
     }
     .education-title h4 {
         font-size: 0.9rem; 
